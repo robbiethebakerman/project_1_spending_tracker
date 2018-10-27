@@ -27,9 +27,10 @@ CREATE TABLE transactions (
 --
 -- INSERT INTO categories (name, colour)
 --   VALUES ('Groceries', 'Blue');
---
--- INSERT INTO transactions (seller_id, category_id, amount, transaction_time, description)
---   VALUES (1, 1, 22.70, '27-Oct-2018 16:54:00', 'Food for dinner');
+
+-- INSERT INTO transactions (seller_id, category_id, amount, transaction_time, description) VALUES (1, 1, 22.70, '27-Oct-2018 16:54', 'Food for dinner');
 --
 -- INSERT INTO transactions (seller_id, category_id, amount, transaction_time, description)
 --   VALUES (1, 1, 22.70, 'now', 'Food for dinner')
+-- 
+-- SELECT seller_id, category_id, amount, description, transaction_time, TO_CHAR(transaction_time, 'DD-Mon-YYYY HH24:MI') transaction_time_formatted FROM transactions WHERE id = $1;

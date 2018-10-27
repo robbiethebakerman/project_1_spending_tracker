@@ -11,6 +11,7 @@ class Transaction
     @category_id = options['category_id'].to_i if options['category_id']
     @amount = options['amount'].to_f
     @transaction_time = options['transaction_time'] if options['transaction_time']
+    @transaction_time_formatted = options['transaction_time_formatted'] if options['transaction_time_formatted']
     @description = options['description'] if options['transaction_time']
   end
 
@@ -32,6 +33,26 @@ class Transaction
     transaction = Transaction.new(results[0])
     return transaction
   end
+
+  def self.find_formatted(id)
+    sql = "SELECT
+        seller_id,
+        category_id,
+        amount,
+        description,
+        transaction_time,
+        TO_CHAR(
+          transaction_time,
+          'DD-Mon-YYYY HH24:MI'
+        ) transaction_time_formatted
+      FROM transactions
+      WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    transaction = Transaction.new(results[0])
+    return transaction
+  end
+
 
   def update()
     sql = "UPDATE transactions
