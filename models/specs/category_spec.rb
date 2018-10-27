@@ -14,15 +14,15 @@ class  TestCategory < MiniTest::Test
   end
 
   def test_category_has_id
-    assert_equal('1',@category.id)
+    assert_equal(1, @category.id)
   end
 
   def test_category_has_name
-    assert_equal('Groceries',@category.name)
+    assert_equal('Groceries', @category.name)
   end
 
   def test_category_has_colour
-    assert_equal('Blue',@category.colour)
+    assert_equal('Blue', @category.colour)
   end
 
 end
