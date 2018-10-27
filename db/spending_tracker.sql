@@ -18,6 +18,18 @@ CREATE TABLE transactions (
   seller_id INT4 REFERENCES sellers(id),
   category_id INT4 REFERENCES categories(id),
   amount NUMERIC(7,2),
-  transaction_time DATETIME,
-  desciption VARCHAR(255)
+  transaction_time TIMESTAMP(0),
+  description VARCHAR(255)
 );
+
+INSERT INTO sellers (name)
+  VALUES ('Tesco');
+
+INSERT INTO categories (name, colour)
+  VALUES ('Groceries', 'Blue');
+
+INSERT INTO transactions (seller_id, category_id, amount, transaction_time, description)
+  VALUES (1, 1, 22.70, '2018-10-27 16:54:00', 'Food for dinner');
+
+INSERT INTO transactions (seller_id, category_id, amount, transaction_time, description)
+  VALUES (1, 1, 22.70, 'now', 'Food for dinner')
