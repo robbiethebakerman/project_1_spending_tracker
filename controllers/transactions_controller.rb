@@ -5,6 +5,7 @@ require_relative('../models/seller')
 require_relative('../models/transaction')
 
 get "/transactions" do
+  @transactions = Transaction.all_formatted()
   erb(:"transactions/index")
 end
 

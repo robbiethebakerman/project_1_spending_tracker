@@ -1,1 +1,35 @@
-<p>Transactions Home</p>
+<h1>Transactions</h1>
+
+<a href="/transactions/new">+ Add New Transaction</a>
+
+<div class="grid">
+  <% for transaction in @transactions %>
+  <% category = transaction.find_category %>
+  <% seller = transaction.find_seller %>
+  <div class="grid-row">
+    <div class="cell">
+      <p><%= transaction.amount %></p>
+    </div>
+    <div class="cell">
+      <p><%= category.name %></p>
+    </div>
+    <div class="cell">
+      <p><%= seller.name %></p>
+    </div>
+    <div class="cell">
+      <p><%= transaction.transaction_time_formatted %></p>
+    </div>
+    <div class="cell">
+      VIEW
+    </div>
+    <div class="cell">
+      EDIT
+    </div>
+    <div class="cell">
+      DELETE
+    </div>
+  </div>
+  <% end %>
+</div>
+
+NEED FIND_CATEGORY AND FIND_SELLER METHODS
