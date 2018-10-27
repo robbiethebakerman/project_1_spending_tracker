@@ -88,7 +88,8 @@ class Transaction
           transaction_time,
           'DD-Mon-YYYY HH24:MI'
         ) transaction_time_formatted
-      FROM transactions;"
+      FROM transactions
+      ORDER BY transaction_time DESC;"
     results = SqlRunner.run(sql)
     transactions = results.map { |result| Transaction.new(result) }
     return transactions
