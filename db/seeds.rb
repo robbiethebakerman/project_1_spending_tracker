@@ -1,8 +1,9 @@
 require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/seller')
-# require_relative('../models/transaction')
+require_relative('../models/transaction')
 
+Transaction.delete_all
 Category.delete_all
 Seller.delete_all
 
@@ -40,7 +41,24 @@ seller1.save
 seller2.save
 seller3.save
 
+transaction1 = Transaction.new({
+  'seller_id' => seller2.id,
+  'category_id' => category2.id,
+  'amount' => 11.24,
+  'transaction_time' => '23-Sep-2018 13:21:00',
+  'description' => 'Round for the bridge team'
+  })
 
+transaction2 = Transaction.new({
+  'seller_id' => seller3.id,
+  'category_id' => category3.id,
+  'amount' => 1199.99,
+  'transaction_time' => '2018-09-13 15:45:00',
+  'description' => "Rex's leg operation"
+  })
+
+transaction1.save
+transaction2.save
 
 
 
