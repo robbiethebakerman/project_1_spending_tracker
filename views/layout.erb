@@ -2,9 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Spending Tracker</title>
+    <title>Pound Tracker</title>
+    <link rel="stylesheet" type="text/css" href="/styles/structure.css" >
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <img src="" alt="">
+      <h1>Pound Tracker</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/transactions">Transactions</a>
+        </li>
+        <li>
+          <a href="/categories">Categories</a>
+        </li>
+        <li>
+          <a href="/sellers">Sellers</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="budget-bar">
+
+    </section>
+    <section class="content">
+      <%= yield %>
+    </section>
   </body>
 </html>
