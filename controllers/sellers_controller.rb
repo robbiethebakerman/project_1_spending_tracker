@@ -7,3 +7,11 @@ require_relative('../models/transaction')
 get "/sellers" do
   erb(:"sellers/index")
 end
+
+get "/sellers/new" do
+  erb(:"sellers/new")
+end
+
+get "/sellers/edit/:id" do
+  erb(:"sellers/edit")
+end

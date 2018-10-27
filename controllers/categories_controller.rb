@@ -7,3 +7,11 @@ require_relative('../models/transaction')
 get "/categories" do
   erb(:"categories/index")
 end
+
+get "/categories/new" do
+  erb(:"categories/new")
+end
+
+get "/categories/edit/:id" do
+  erb(:"categories/edit")
+end
