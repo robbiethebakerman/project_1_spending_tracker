@@ -77,6 +77,23 @@ class Transaction
     return transactions
   end
 
+  def self.all_formatted()
+    sql = "SELECT
+        seller_id,
+        category_id,
+        amount,
+        description,
+        transaction_time,
+        TO_CHAR(
+          transaction_time,
+          'DD-Mon-YYYY HH24:MI'
+        ) transaction_time_formatted
+      FROM transactions;"
+    results = SqlRunner.run(sql)
+    transactions = results.map { |result| Transaction.new(result) }
+    return transactions
+  end
+
   def self.delete_all()
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
