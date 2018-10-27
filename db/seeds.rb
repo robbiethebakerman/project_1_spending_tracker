@@ -1,9 +1,10 @@
 require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/seller')
-require_relative('../models/transaction')
+# require_relative('../models/transaction')
 
 Category.delete_all
+Seller.delete_all
 
 category1 = Category.new({
   'name' => 'Groceries',
@@ -16,18 +17,28 @@ category2 = Category.new({
   })
 
 category3 = Category.new({
-  'name' => 'Vet',
-  'colour' => 'green'
+  'name' => 'Vet'
   })
 
 category1.save
 category2.save
 category3.save
 
-# category1.name = 'Shopping'
-# category1.update
-#
-# category2.delete
+seller1 = Seller.new({
+  'name' => 'Tesco'
+  })
+
+seller2 = Seller.new({
+  'name' => 'The Tenement'
+  })
+
+seller3 = Seller.new({
+  'name' => "Anderson's Veterinary Clinic"
+  })
+
+seller1.save
+seller2.save
+seller3.save
 
 
 
