@@ -16,9 +16,17 @@ get "/transactions/detail/:id" do
 end
 
 get "/transactions/new" do
+  @categories = Category.all()
+  @sellers = Seller.all()
   erb(:"transactions/new")
 end
 
 get "/transactions/edit/:id" do
   erb(:"transactions/edit")
+end
+
+post "/transactions/create" do
+  @transaction = Transaction.new(params)
+  @transaction.save()
+  redirect to "/transactions"
 end

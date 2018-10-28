@@ -7,6 +7,13 @@ Transaction.delete_all
 Category.delete_all
 Seller.delete_all
 
+category_none = Category.new({
+  'id' => '1000000',
+  'name' => 'None'
+  })
+
+category_none.save
+
 category2 = Category.new({
   'name' => 'Groceries',
   'colour' => 'blue'
@@ -71,9 +78,9 @@ transaction2.save
 
 
 
-
-binding.pry
-nil
+#
+# binding.pry
+# nil
 
 # INSERT INTO sellers (name)
 #   VALUES ('Tesco');

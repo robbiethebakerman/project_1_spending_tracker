@@ -1,1 +1,22 @@
 <p>Add New Transaction</p>
+
+<form class="new-update" method="post" action="/transactions/create">
+
+  <label for="amount">Amount:</label>
+    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="amount" />
+
+  <label for="description">Description:</label>
+    <input id="description" type="text" name="description" placeholder="Enter a brief description...">
+
+    <label for="category">Category:</label>
+    <select id="category" name="category_id" >
+      <% for category in @categories %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+
+  <input type="submit" value="Add Transaction"/>
+
+  <a href="/transactions">Cancel</a>
+
+</form>

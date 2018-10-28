@@ -4,17 +4,29 @@
 
 <div class="grid">
   <% for transaction in @transactions %>
-  <% category = transaction.find_category %>
-  <% seller = transaction.find_seller %>
+  <% category = transaction.find_category if transaction.category_id != nil %>
+  <% seller = transaction.find_seller if transaction.seller_id != nil %>
   <div class="grid-row">
     <div class="cell">
       <p><%= transaction.amount %></p>
     </div>
     <div class="cell">
-      <p><%= category.name %></p>
+      <p>
+        <%= if transaction.category_id = ""
+              nil
+            else
+              category.name
+            end %>
+      </p>
     </div>
     <div class="cell">
-      <p><%= seller.name %></p>
+      <p>
+        <%= if transaction.seller_id = ""
+              nil
+            else
+              seller.name
+            end %>
+      </p>
     </div>
     <div class="cell">
       <p><%= transaction.transaction_time_formatted %></p>
