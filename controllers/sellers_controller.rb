@@ -23,7 +23,8 @@ get "/sellers/delete/:id" do
   erb(:"sellers/destroy")
 end
 
-get "/sellers/delete/cannot/used" do
+get "/sellers/delete/cannot/:id" do
+  @seller = Seller.find(params['id'])
   erb(:"sellers/destroy_failed")
 end
 
@@ -39,13 +40,13 @@ post "/sellers/update/:id" do
   redirect to "/sellers"
 end
 
-post "sellers/delete/:id" do
+post "/sellers/delete/:id" do
   seller = Seller.find(params[:id])
   transactions = seller.find_transactions()
   if transactions.empty?()
     seller.delete()
     redirect to "/sellers"
   else
-    redirect to "/sellers/delete/cannot/used"
+    redirect to "/sellers/delete/cannot/#{seller.id}"
   end
 end

@@ -1,1 +1,17 @@
-DESTROY FAILED!
+<h1>Sorry!</h1>
+
+<p>This seller cannot be removed because it is already used as the seller for some of your transactions.<br><br>You could try doing one of the following things instead:</p>
+ <ul>
+   <li>
+     <p>Updating the seller details</p>
+     <a href="/sellers/edit/<%= @seller.id %>">Update Seller Details</a>
+   </li>
+   <li>
+     <p>Updating the transactions themselves, or deleting them</p>
+     <a href="">View transactions using this seller</a>
+   </li>
+   <li>
+     <p>Or... Just return to the sellers page</p>
+     <a href="/sellers">Return to Sellers</a>
+   </li>
+ </ul>

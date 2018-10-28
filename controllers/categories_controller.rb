@@ -23,7 +23,8 @@ get "/categories/delete/:id" do
   erb(:"categories/destroy")
 end
 
-get "/categories/delete/cannot/used" do
+get "/categories/delete/cannot/:id" do
+  @category = Category.find(params['id'])
   erb(:"categories/destroy_failed")
 end
 
@@ -46,6 +47,6 @@ post "/categories/delete/:id" do
     category.delete()
     redirect to "/categories"
   else
-    redirect to "/categories/delete/cannot/used"
+    redirect to "/categories/delete/cannot/#{category.id}"
   end
 end
