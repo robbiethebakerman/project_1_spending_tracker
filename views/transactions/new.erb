@@ -8,12 +8,19 @@
   <label for="description">Description:</label>
     <input id="description" type="text" name="description" placeholder="Enter a brief description...">
 
-    <label for="category">Category:</label>
-    <select id="category" name="category_id" >
-      <% for category in @categories %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-      <% end %>
-    </select>
+  <label for="category">Category:</label>
+  <select id="category" name="category_id" >
+    <% for category in @categories %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+  </select>
+
+  <label for="seller">Seller:</label>
+  <select id="seller" name="seller_id" >
+    <% for seller in @sellers %>
+      <option value="<%= seller.id %>"><%= seller.name %></option>
+    <% end %>
+  </select>
 
   <input type="submit" value="Add Transaction"/>
 

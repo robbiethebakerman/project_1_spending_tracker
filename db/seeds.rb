@@ -5,7 +5,7 @@ require_relative('../models/transaction')
 
 Transaction.delete_all
 Category.delete_all_except_none
-Seller.delete_all
+Seller.delete_all_except_none
 
 category2 = Category.new({
   'name' => 'Groceries',

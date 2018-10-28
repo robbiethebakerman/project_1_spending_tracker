@@ -22,8 +22,8 @@ CREATE TABLE transactions (
   description VARCHAR(255)
 );
 
-INSERT INTO categories (id, colour, name) VALUES (1000000, NULL, 'None');
-INSERT INTO sellers (id, name) VALUES (1000000, 'None');
+INSERT INTO categories (name) VALUES ('None');
+INSERT INTO sellers (name) VALUES ('None');
 
 
 -- INSERT INTO sellers (name)

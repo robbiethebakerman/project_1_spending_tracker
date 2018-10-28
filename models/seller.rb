@@ -52,9 +52,26 @@ class Seller
     return sellers
   end
 
+  def self.all_except_none()
+    sql = "SELECT *
+      FROM sellers
+      WHERE name <> $1;"
+    values = ['None']
+    results = SqlRunner.run(sql, values)
+    sellers = results.map { |result| Seller.new(result) }
+    return sellers
+  end
+
   def self.delete_all()
     sql = "DELETE FROM sellers;"
     SqlRunner.run(sql)
+  end
+
+  def self.delete_all_except_none()
+    sql = "DELETE FROM sellers
+      WHERE name <> $1;"
+    values = ['None']
+    SqlRunner.run(sql, values)
   end
 
 end
