@@ -4,6 +4,8 @@ Highlight:
   - Researched on PostgreSql how to return dates in a more friendly format
   - Also that dates can be formatted without the :ss to make it more user friendly
 
+- Also transaction_time_formatted_html
+
 
 - Getting numbers to show to 2dp on the page, using ruby's method to convert to a string
   -   <div class="cell">

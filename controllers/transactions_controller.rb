@@ -25,8 +25,8 @@ end
 
 get "/transactions/edit/:id" do
   @transaction = Transaction.find_formatted_for_html_edit_form(params[:id])
-  # @category = @transaction.find_category
-  # @seller = @transaction.find_seller
+  @category = @transaction.find_category
+  @seller = @transaction.find_seller
   @categories = Category.all()
   @sellers = Seller.all()
   erb(:"transactions/edit")

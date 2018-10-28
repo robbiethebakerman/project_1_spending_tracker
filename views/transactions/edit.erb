@@ -10,6 +10,7 @@
 
   <label for="category">Category:</label>
   <select id="category" name="category_id" >
+    <option value="<%= @category.id %>" selected hidden ><%= @category.name %></option>
     <% for category in @categories %>
       <option value="<%= category.id %>"><%= category.name %></option>
     <% end %>
@@ -17,6 +18,7 @@
 
   <label for="seller">Seller:</label>
   <select id="seller" name="seller_id" >
+    <option value="<%= @seller.id %>" selected hidden><%= @seller.name %></option>
     <% for seller in @sellers %>
       <option value="<%= seller.id %>"><%= seller.name %></option>
     <% end %>
