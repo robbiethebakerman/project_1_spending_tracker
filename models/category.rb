@@ -56,7 +56,8 @@ class Category
   def self.all_except_none()
     sql = "SELECT *
       FROM categories
-      WHERE name <> $1;"
+      WHERE name <> $1
+      ORDER BY name;"
     values = ['None']
     results = SqlRunner.run(sql, values)
     categories = results.map { |result| Category.new(result) }

@@ -55,7 +55,8 @@ class Seller
   def self.all_except_none()
     sql = "SELECT *
       FROM sellers
-      WHERE name <> $1;"
+      WHERE name <> $1
+      ORDER BY name;"
     values = ['None']
     results = SqlRunner.run(sql, values)
     sellers = results.map { |result| Seller.new(result) }
