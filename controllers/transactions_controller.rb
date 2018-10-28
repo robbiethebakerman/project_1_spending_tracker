@@ -12,6 +12,8 @@ end
 get "/transactions/detail/:id" do
   id = params[:id]
   @transaction = Transaction.find(id)
+  @category = @transaction.find_category
+  @seller = @transaction.find_seller
   erb(:"transactions/show")
 end
 
