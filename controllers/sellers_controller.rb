@@ -16,3 +16,9 @@ end
 get "/sellers/edit/:id" do
   erb(:"sellers/edit")
 end
+
+post "/sellers/create" do
+  @seller = Seller.new(params)
+  @seller.save()
+  redirect to "/sellers"
+end
