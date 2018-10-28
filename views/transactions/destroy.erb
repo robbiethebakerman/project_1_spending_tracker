@@ -1,0 +1,13 @@
+<p>
+  !!!
+  <br>
+  Are you sure you want to remove this transaction?
+  <br>
+  Once you remove it, it's gone for good!!!
+</p>
+
+<form action="/transactions/delete/<%= @transaction.id %>" method="post">
+  <input type="submit" value="Yes I'm sure! Please remove it!">
+</form>
+
+<a href="/transactions">No, I made a mistake! Please don't remove it!</a>

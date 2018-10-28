@@ -32,6 +32,11 @@ get "/transactions/edit/:id" do
   erb(:"transactions/edit")
 end
 
+get "/transactions/delete/:id" do
+  @transaction = Transaction.find(params[:id])
+  erb(:"transactions/destroy")
+end
+
 post "/transactions/create" do
   @transaction = Transaction.new(params)
   @transaction.save()
@@ -41,5 +46,11 @@ end
 post "/transactions/update/:id" do
   transaction = Transaction.new(params)
   transaction.update
+  redirect to "/transactions"
+end
+
+post "/transactions/delete/:id" do
+  transaction = Transaction.find(params[:id])
+  transaction.delete()
   redirect to "/transactions"
 end

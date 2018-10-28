@@ -24,13 +24,13 @@
       <p><%= transaction.transaction_time_formatted %></p>
     </div>
     <div class="cell">
-      <a href="/transactions/detail/<%= transaction.id %>">View</a>
+      <a href="/transactions/detail/<%= transaction.id %>">View Transaction</a>
     </div>
     <div class="cell">
-      <a href="/transactions/edit/<%= transaction.id %>">Edit</a>
+      <a href="/transactions/edit/<%= transaction.id %>">Update Transaction Details</a>
     </div>
     <div class="cell">
-      DELETE
+      <a href="/transactions/delete/<%= transaction.id %>">Remove Transaction</a>
     </div>
   </div>
   <% end %>
