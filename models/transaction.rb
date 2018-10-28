@@ -79,6 +79,7 @@ class Transaction
 
   def self.all_formatted()
     sql = "SELECT
+        id,
         seller_id,
         category_id,
         amount,

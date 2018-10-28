@@ -20,10 +20,10 @@
       <p><%= transaction.transaction_time_formatted %></p>
     </div>
     <div class="cell">
-      VIEW
+      <a href="/transactions/detail/<%= transaction.id %>">View</a>
     </div>
     <div class="cell">
-      EDIT
+      <a href="/transactions/edit/<%= transaction.id %>">Edit</a>
     </div>
     <div class="cell">
       DELETE
