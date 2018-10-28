@@ -8,7 +8,7 @@
   <% seller = transaction.find_seller if transaction.seller_id != nil %>
   <div class="grid-row">
     <div class="cell">
-      <p><%= transaction.amount %></p>
+      <p><%= '%.2f' % transaction.amount %></p>
     </div>
     <div class="cell">
       <p>
