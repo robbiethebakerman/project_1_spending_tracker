@@ -16,3 +16,9 @@ end
 get "/categories/edit/:id" do
   erb(:"categories/edit")
 end
+
+post "/categories/create" do
+  @category = Category.new(params)
+  @category.save()
+  redirect to "/categories"
+end

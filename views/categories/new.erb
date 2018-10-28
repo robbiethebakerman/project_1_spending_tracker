@@ -1,1 +1,23 @@
 <p>Add New Category</p>
+
+<form class="new-update" method="post" action="/categories/create">
+
+  <label for="name">Category:</label>
+    <input id="name" type="text" name="name" />
+
+  <label for="colour">Colour:</label>
+  <select id="colour" name="colour" >
+    <option value="" selected>None</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="yellow">Yellow</option>
+    <option value="green">Green</option>
+    <option value="purple">Purple</option>
+    <option value="orange">Orange</option>
+  </select>
+
+  <input type="submit" value="Add Category"/>
+
+  <a href="/categories">Cancel</a>
+
+</form>
