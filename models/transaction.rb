@@ -3,7 +3,7 @@ require_relative("../db/sql_runner.rb")
 class Transaction
 
   attr_reader :id
-  attr_accessor :seller_id, :category_id, :amount, :transaction_time, :description, :transaction_time_formatted
+  attr_accessor :seller_id, :category_id, :amount, :transaction_time, :description, :transaction_time_formatted, :transaction_time_formatted_html
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,7 @@ class Transaction
     @amount = options['amount'].to_f
     @transaction_time = options['transaction_time'] if options['transaction_time']
     @transaction_time_formatted = options['transaction_time_formatted'] if options['transaction_time_formatted']
+    @transaction_time_formatted_html = options['transaction_time_formatted_html'] if options['transaction_time_formatted_html']
     @description = options['description'] if options['transaction_time']
   end
 
@@ -36,6 +37,7 @@ class Transaction
 
   def self.find_formatted(id)
     sql = "SELECT
+        id,
         seller_id,
         category_id,
         amount,
@@ -45,6 +47,26 @@ class Transaction
           transaction_time,
           'DD-Mon-YYYY HH24:MI'
         ) transaction_time_formatted
+      FROM transactions
+      WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    transaction = Transaction.new(results[0])
+    return transaction
+  end
+
+  def self.find_formatted_for_html_edit_form(id)
+    sql = "SELECT
+        id,
+        seller_id,
+        category_id,
+        amount,
+        description,
+        transaction_time,
+        TO_CHAR(
+          transaction_time,
+          'yyyy-MM-ddThh:mm'
+        ) transaction_time_formatted_html
       FROM transactions
       WHERE id = $1;"
     values = [id]

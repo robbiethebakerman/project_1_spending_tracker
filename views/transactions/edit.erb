@@ -1,1 +1,32 @@
-<p>Edit Transaction</p>
+<p>Update Transaction Details</p>
+
+<form class="new-update" method="post" action="/transactions/update/<%= @transaction.id %>">
+
+  <label for="amount">Amount:</label>
+    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="amount" value="<%= @transaction.amount %>" required />
+
+  <label for="description">Description:</label>
+    <input id="description" type="text" name="description" placeholder="Enter a brief description..." value="<%= @transaction.description %>" >
+
+  <label for="category">Category:</label>
+  <select id="category" name="category_id" >
+    <% for category in @categories %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+  </select>
+
+  <label for="seller">Seller:</label>
+  <select id="seller" name="seller_id" >
+    <% for seller in @sellers %>
+      <option value="<%= seller.id %>"><%= seller.name %></option>
+    <% end %>
+  </select>
+
+  <label for="datetime">Transaction Date / Time:</label>
+    <input id="datetime" type="datetime-local" name="transaction_time" value="<%= @transaction.transaction_time_formatted_html %>" required >
+
+  <input type="submit" value="Update Transaction Details"/>
+
+  <a href="/transactions">Cancel</a>
+
+</form>
