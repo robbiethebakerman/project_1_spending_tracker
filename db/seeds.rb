@@ -72,8 +72,8 @@ transaction2.save
 
 
 
-# binding.pry
-# nil
+binding.pry
+nil
 
 # INSERT INTO sellers (name)
 #   VALUES ('Tesco');

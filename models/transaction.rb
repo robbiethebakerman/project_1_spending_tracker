@@ -65,7 +65,7 @@ class Transaction
         transaction_time,
         TO_CHAR(
           transaction_time,
-          'yyyy-MM-ddThh:mm'
+          'yyyy-MM-ddThh24:mm'
         ) transaction_time_formatted_html
       FROM transactions
       WHERE id = $1;"
