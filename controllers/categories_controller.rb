@@ -5,7 +5,7 @@ require_relative('../models/seller')
 require_relative('../models/transaction')
 
 get "/categories" do
-  @categories = Category.all()
+  @categories = Category.all_except_none()
   erb(:"categories/index")
 end
 

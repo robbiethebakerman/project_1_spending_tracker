@@ -4,7 +4,7 @@
 
 <div class="grid">
   <% for transaction in @transactions %>
-  <% category = transaction.find_category if transaction.category_id != nil %>
+  <% category = transaction.find_category %>
   <% seller = transaction.find_seller if transaction.seller_id != nil %>
   <div class="grid-row">
     <div class="cell">
@@ -12,20 +12,12 @@
     </div>
     <div class="cell">
       <p>
-        <%= if transaction.category_id = ""
-              nil
-            else
-              category.name
-            end %>
+        <%= category.name if category.name != 'None' %>
       </p>
     </div>
     <div class="cell">
       <p>
-        <%= if transaction.seller_id = ""
-              nil
-            else
-              seller.name
-            end %>
+        <%= seller.name if seller.name != 'None' %>
       </p>
     </div>
     <div class="cell">
