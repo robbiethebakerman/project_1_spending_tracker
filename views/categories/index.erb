@@ -1,1 +1,19 @@
-<p>Categories Home</p>
+<h1>Categories</h1>
+
+<a href="/categories/new">+ Add New Category</a>
+
+<div class="grid">
+  <% for category in @categories %>
+  <div class="grid-row">
+    <div class="cell">
+      <p><%= category.name %></p>
+    </div>
+    <div class="cell">
+      <a href="/categories/edit/<%= category.id %>">Edit</a>
+    </div>
+    <div class="cell">
+      DELETE
+    </div>
+  </div>
+  <% end %>
+</div>

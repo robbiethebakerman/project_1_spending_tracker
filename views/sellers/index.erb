@@ -1,1 +1,19 @@
-<p>Sellers Home</p>
+<h1>Sellers</h1>
+
+<a href="/sellers/new">+ Add New Seller</a>
+
+<div class="grid">
+  <% for seller in @sellers %>
+  <div class="grid-row">
+    <div class="cell">
+      <p><%= seller.name %></p>
+    </div>
+    <div class="cell">
+      <a href="/sellers/edit/<%= seller.id %>">Edit</a>
+    </div>
+    <div class="cell">
+      DELETE
+    </div>
+  </div>
+  <% end %>
+</div>

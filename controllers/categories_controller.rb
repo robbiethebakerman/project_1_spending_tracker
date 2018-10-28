@@ -5,6 +5,7 @@ require_relative('../models/seller')
 require_relative('../models/transaction')
 
 get "/categories" do
+  @categories = Category.all()
   erb(:"categories/index")
 end
 
