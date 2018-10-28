@@ -7,17 +7,17 @@ Transaction.delete_all
 Category.delete_all
 Seller.delete_all
 
-category1 = Category.new({
+category2 = Category.new({
   'name' => 'Groceries',
   'colour' => 'blue'
   })
 
-category2 = Category.new({
+category3 = Category.new({
   'name' => 'Pub',
   'colour' => 'red'
   })
 
-category3 = Category.new({
+category1 = Category.new({
   'name' => 'Vet'
   })
 

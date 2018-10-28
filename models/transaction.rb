@@ -104,10 +104,20 @@ class Transaction
     sql = "SELECT *
       FROM categories
       WHERE id = $1;"
-    values = [@seller_id]
+    values = [@category_id]
     results = SqlRunner.run(sql, values)
     category = Category.new(results[0])
     return category
+  end
+
+  def find_seller
+    sql = "SELECT *
+      FROM sellers
+      WHERE id = $1;"
+    values = [@seller_id]
+    results = SqlRunner.run(sql, values)
+    seller = Seller.new(results[0])
+    return seller
   end
 
 end
