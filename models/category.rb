@@ -53,9 +53,26 @@ class Category
     return categories
   end
 
+  def self.all_except_none()
+    sql = "SELECT *
+      FROM categories
+      WHERE id <> $1;"
+    values = [1000000]
+    results = SqlRunner.run(sql, values)
+    categories = results.map { |result| Category.new(result) }
+    return categories
+  end
+
   def self.delete_all()
     sql = "DELETE FROM categories;"
     SqlRunner.run(sql)
+  end
+
+  def self.delete_all_except_none()
+    sql = "DELETE FROM categories
+      WHERE id <> $1;"
+    values = [1000000]
+    SqlRunner.run(sql, values)
   end
 
 end

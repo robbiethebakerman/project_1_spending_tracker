@@ -4,15 +4,8 @@ require_relative('../models/seller')
 require_relative('../models/transaction')
 
 Transaction.delete_all
-Category.delete_all
+Category.delete_all_except_none
 Seller.delete_all
-
-category_none = Category.new({
-  'id' => '1000000',
-  'name' => 'None'
-  })
-
-category_none.save
 
 category2 = Category.new({
   'name' => 'Groceries',
@@ -78,9 +71,9 @@ transaction2.save
 
 
 
-#
-# binding.pry
-# nil
+
+binding.pry
+nil
 
 # INSERT INTO sellers (name)
 #   VALUES ('Tesco');
