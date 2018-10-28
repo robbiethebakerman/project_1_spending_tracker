@@ -9,3 +9,6 @@ Highlight:
   -   <div class="cell">
         <p><%= '%.2f' % transaction.amount %></p>
       </div>
+
+
+ASK - Is it okay if some bits are only supported in chrome?
