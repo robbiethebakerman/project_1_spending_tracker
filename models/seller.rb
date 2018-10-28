@@ -75,4 +75,14 @@ class Seller
     SqlRunner.run(sql, values)
   end
 
+  def find_transactions()
+    sql = "SELECT *
+      FROM transactions
+      WHERE seller_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    transactions = results.map { |result| Transaction.new(result) }
+    return transactions
+  end
+
 end

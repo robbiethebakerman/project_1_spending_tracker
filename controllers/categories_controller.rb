@@ -18,6 +18,15 @@ get "/categories/edit/:id" do
   erb(:"categories/edit")
 end
 
+get "/categories/delete/:id" do
+  @category = Category.find(params[:id])
+  erb(:"categories/destroy")
+end
+
+get "/categories/delete/cannot/used" do
+  erb(:"categories/destroy_failed")
+end
+
 post "/categories/create" do
   @category = Category.new(params)
   @category.save()
@@ -26,6 +35,17 @@ end
 
 post "/categories/update/:id" do
   category = Category.new(params)
-  category.update
+  category.update()
   redirect to "/categories"
+end
+
+post "/categories/delete/:id" do
+  category = Category.find(params[:id])
+  transactions = category.find_transactions()
+  if transactions.empty?()
+    category.delete()
+    redirect to "/categories"
+  else
+    redirect to "/categories/delete/cannot/used"
+  end
 end
