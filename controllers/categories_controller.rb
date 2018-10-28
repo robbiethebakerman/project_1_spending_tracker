@@ -14,11 +14,18 @@ get "/categories/new" do
 end
 
 get "/categories/edit/:id" do
+  @category = Category.find(params[:id])
   erb(:"categories/edit")
 end
 
 post "/categories/create" do
   @category = Category.new(params)
   @category.save()
+  redirect to "/categories"
+end
+
+post "/categories/update/:id" do
+  category = Category.new(params)
+  category.update
   redirect to "/categories"
 end

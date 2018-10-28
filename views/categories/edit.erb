@@ -1,1 +1,28 @@
-<p>Edit Category</p>
+<p>Update Category Details</p>
+
+<form class="new-update" method="post" action="/categories/update/<%= @category.id %>">
+
+  <label for="name">Category:</label>
+    <input id="name" type="text" name="name" maxlength="255" value="<%= @category.name %>" required/>
+
+  <label for="colour">Colour:</label>
+    <select id="colour" name="colour" >
+      <% if @category.colour != "" %>
+        <option value="<%= @category.colour %>" selected hidden><%= @category.colour %></option>
+      <% else %>
+        <option value="" selected hidden>None</option>
+      <% end %>
+      <option value="">None</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+      <option value="orange">Orange</option>
+    </select>
+
+  <input type="submit" value="Update Category Details"/>
+
+  <a href="/categories">Cancel</a>
+
+</form>
