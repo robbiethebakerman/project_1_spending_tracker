@@ -1,20 +1,27 @@
+/* body */
+
+body {
+  color: #D86939;
+}
+
 /* header  */
 
 .header-grid .grid-row {
   display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
   border-bottom: 1px solid #D86939;
 }
 
 .header-grid .cell {
-  flex: 1;
+  flex-grow: 1;
   text-align: center;
   font-style: italic;
-  color: #D86939;
 }
 
 .header-grid .logo {
   width: 260px;
-  flex: none;
+  /* flex: none; */
 }
 
 /* nav bar */
@@ -22,6 +29,7 @@
 nav ul {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid #D86939;
   width: 100%;
   padding: 0;
@@ -39,8 +47,6 @@ nav li {
 
 nav li a {
   text-decoration: none;
-  /* color: #5A0000; */
-  /* color: #710D00; */
   color: #D86939;
   width: 100%;
   display: block;
@@ -56,3 +62,21 @@ nav li a:hover {
 }
 
 /* budget bar */
+
+.budget-bar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.budget-bar-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #D86939;
+}
+
+.cell-total-spent {
+  align-self: flex-end;
+  padding-right: 8px;
+}

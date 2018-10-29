@@ -35,11 +35,9 @@
       </ul>
     </nav>
     <section class="budget-bar">
-      <div class="grid budget-bar-grid">
-        <div class="grid-row">
-          <div class="cell">
-            <p>Total Spent:<%= '%.2f' % Transaction.total_spent %></p>
-          </div>
+      <div class="budget-bar-row">
+        <div class="cell-total-spent">
+          <p>TOTAL SPENT: £<%= '%.2f' % Transaction.total_spent %></p>
         </div>
       </div>
     </section>
