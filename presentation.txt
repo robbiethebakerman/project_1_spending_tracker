@@ -14,3 +14,5 @@ Highlight:
 
 
 ASK - Is it okay if some bits are only supported in chrome?
+
+STILL NEED TOTAL SPENT TO BE DISPLAYED

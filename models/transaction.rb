@@ -143,4 +143,12 @@ class Transaction
     return seller
   end
 
+  def self.total_spent
+    sql = "SELECT SUM (amount)
+      FROM transactions;"
+    results = SqlRunner.run(sql)
+    total = results[0]['sum']
+    return total
+  end
+
 end
