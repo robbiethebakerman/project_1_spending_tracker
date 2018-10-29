@@ -80,3 +80,48 @@ nav li a:hover {
   align-self: flex-end;
   padding-right: 8px;
 }
+
+/* home page */
+
+.home-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.home-options h2 {
+  width: 191px;
+}
+
+.home-options ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  padding: 3px 0px;
+  margin: 10px 0;
+  background-color: #FFE7D4;
+}
+
+.home-options li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+}
+
+.home-options a {
+  text-decoration: none;
+  color: #D86939;
+  background-color: #EFEDFF;
+  padding: 5px;
+  border: 1px solid #D86939;
+  border-radius: 3px;
+}
+
+.home-options a:active {
+  margin-top: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
