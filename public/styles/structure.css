@@ -129,3 +129,44 @@ nav li a:hover {
   background-color: #EFEDFF;
   border-color: #D86939;
 }
+
+/* index pages - top */
+
+.index-top-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.index-cell-title {
+  padding-right: 8px;
+}
+
+.index-cell-add-button {
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.index-cell-add-button a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  padding-top: 1px;
+}
+
+.index-cell-add-button a span {
+  font-size: 24px;
+}
+
+/* transactions grid */
+
+.transaction-list-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.transaction-list-grid .cell {
+
+}

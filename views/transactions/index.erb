@@ -1,12 +1,16 @@
-<h1>Transactions</h1>
+<div class="index-top-row">
+  <div class="index-cell-title">
+    <h1>Transactions</h1>
+  </div>
+  <div class="index-cell-add-button">
+    <a href="/transactions/new" class="button" ><span>+ </span>Add New Transaction</a>
+  </div>
+</div>
 
-<a href="/transactions/new">+ Add New Transaction</a>
-
-<div class="grid transaction-list-grid">
+<div class="transaction-list-grid">
   <% for transaction in @transactions %>
   <% category = transaction.find_category %>
   <% seller = transaction.find_seller if transaction.seller_id != nil %>
-  <div class="grid-row">
     <div class="cell">
       <p><%= '%.2f' % transaction.amount %></p>
     </div>
@@ -32,6 +36,5 @@
     <div class="cell">
       <a href="/transactions/delete/<%= transaction.id %>">Remove Transaction</a>
     </div>
-  </div>
   <% end %>
 </div>
