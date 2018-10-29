@@ -71,14 +71,27 @@ nav li a:hover {
 
 .budget-bar-row {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid #D86939;
 }
 
 .cell-total-spent {
-  align-self: flex-end;
   padding-right: 8px;
+}
+
+.cell-budget {
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.cell-budget a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  margin-left: 10px;
+  font-size: 14px;
 }
 
 /* home page */
@@ -112,16 +125,7 @@ nav li a:hover {
 }
 
 .home-options a {
-  text-decoration: none;
   color: #D86939;
   background-color: #EFEDFF;
-  padding: 5px;
-  border: 1px solid #D86939;
-  border-radius: 3px;
-}
-
-.home-options a:active {
-  margin-top: 3px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-color: #D86939;
 }

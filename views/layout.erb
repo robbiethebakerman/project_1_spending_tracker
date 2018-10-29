@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>MyWallet</title>
     <link rel="stylesheet" type="text/css" href="/styles/structure.css" >
+    <link rel="stylesheet" type="text/css" href="/styles/buttons.css" >
   </head>
   <body>
     <header>
@@ -36,6 +37,10 @@
     </nav>
     <section class="budget-bar">
       <div class="budget-bar-row">
+        <div class="cell-budget">
+          <p>BUDGET: £nn.nn</p>
+          <a href="#" class="button" >Change Budget Amount</a>
+        </div>
         <div class="cell-total-spent">
           <p>TOTAL SPENT: £<%= '%.2f' % Transaction.total_spent %></p>
         </div>
