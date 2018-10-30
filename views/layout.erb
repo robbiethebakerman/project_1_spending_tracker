@@ -40,11 +40,11 @@
     <section class="budget-bar">
       <div class="budget-bar-row">
         <div class="cell-budget">
-          <p>BUDGET: £nn.nn</p>
+          <p>BUDGET: £<%= @budget_total_amount %></p>
           <a href="#" class="button" >Change Budget Amount</a>
         </div>
         <div class="cell-total-spent">
-          <p>TOTAL SPENT: £<%= '%.2f' % Transaction.total_spent %></p>
+          <p>TOTAL SPENT: £<%= @total_spent %></p>
         </div>
       </div>
     </section>

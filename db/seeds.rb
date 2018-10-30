@@ -2,6 +2,7 @@ require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/seller')
 require_relative('../models/transaction')
+require_relative('../models/budget')
 
 Transaction.delete_all
 Category.delete_all_except_none

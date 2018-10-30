@@ -29,7 +29,7 @@ CREATE TABLE budgets (
   amount NUMERIC(7,2)
 );
 
-INSERT INTO budgets (type) VALUES ('Total');
+INSERT INTO budgets (type) VALUES ('total');
 INSERT INTO categories (name) VALUES ('None');
 INSERT INTO sellers (name) VALUES ('None');
 

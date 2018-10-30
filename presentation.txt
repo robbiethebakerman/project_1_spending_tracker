@@ -12,6 +12,13 @@ Highlight:
         <p><%= '%.2f' % transaction.amount %></p>
       </div>
 
+- Bug fix for if total amount of transactions = 0
+
+      get '/' do
+        @transaction = '0.00'
+        @transaction = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+        erb(:index)
+      end
 
 ASK - Is it okay if some bits are only supported in chrome?
 
