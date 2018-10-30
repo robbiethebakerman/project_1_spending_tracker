@@ -57,6 +57,8 @@ post "/transactions/create" do
   transaction.save()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+  $alert_colour = 'green'
+  $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
   redirect to "/transactions"
 end
 
@@ -65,6 +67,8 @@ post "/transactions/update/:id" do
   transaction.update()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+  $alert_colour = 'green'
+  $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
   redirect to "/transactions"
 end
 
@@ -73,6 +77,8 @@ post "/transactions/delete/:id" do
   transaction.delete()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+  $alert_colour = 'green'
+  $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
   redirect to "/transactions"
 end
 

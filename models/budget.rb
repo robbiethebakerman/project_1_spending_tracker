@@ -6,7 +6,7 @@ class Budget
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @type = options['type']
-    @amount = options['amount'] if options['amount']
+    @amount = options['amount'].to_f if options['amount']
   end
 
     def self.find(id)

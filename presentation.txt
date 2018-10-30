@@ -28,6 +28,16 @@ Highlight:
     set :total_spent, '0.00'
     set :total_spent, '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
 
+- Plus further solution of issues with alert colour display. Found out total_spent method was outputting a string and needed to change that with "to_f"
+
+    $budget_total = Budget.find_by_type('total')
+    $budget_total_amount = '0.00'
+    $budget_total_amount = '%.2f' % $budget_total.amount if $budget_total.amount != nil
+    $total_spent = '0.00'
+    $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+    $alert_colour = 'green'
+    $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
+
 ASK - Is it okay if some bits are only supported in chrome?
 
 STILL NEED TOTAL SPENT TO BE DISPLAYED

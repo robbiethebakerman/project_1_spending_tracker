@@ -12,6 +12,8 @@ $budget_total_amount = '0.00'
 $budget_total_amount = '%.2f' % $budget_total.amount if $budget_total.amount != nil
 $total_spent = '0.00'
 $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+$alert_colour = 'green'
+$alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
 
 get '/' do
   erb(:index)

@@ -43,7 +43,7 @@
           <p>BUDGET: £<%= $budget_total_amount %></p>
           <a href="/budget/set/<%= $budget_total.type %>" class="button" >Change Budget Amount</a>
         </div>
-        <div class="cell-total-spent">
+        <div class="cell-total-spent" style="background-color: <%= $alert_colour %>;">
           <p>TOTAL SPENT: £<%= $total_spent %></p>
         </div>
       </div>

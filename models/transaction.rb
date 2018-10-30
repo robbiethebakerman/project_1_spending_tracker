@@ -189,7 +189,7 @@ class Transaction
     sql = "SELECT SUM (amount)
       FROM transactions;"
     results = SqlRunner.run(sql)
-    total = results[0]['sum']
+    total = results[0]['sum'].to_f
     return total
   end
 
