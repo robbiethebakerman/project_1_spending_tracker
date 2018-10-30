@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS sellers;
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS budgets;
 
 CREATE TABLE sellers (
   id SERIAL4 PRIMARY KEY,
@@ -22,6 +23,13 @@ CREATE TABLE transactions (
   description VARCHAR(255)
 );
 
+CREATE TABLE budgets (
+  id SERIAL4 PRIMARY KEY,
+  type VARCHAR(255) NOT NULL,
+  amount NUMERIC(7,2)
+);
+
+INSERT INTO budgets (type) VALUES ('Total');
 INSERT INTO categories (name) VALUES ('None');
 INSERT INTO sellers (name) VALUES ('None');
 
