@@ -36,8 +36,14 @@
   grid-template-columns: 100px repeat(3, 1fr);
 }
 
+#seller-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* width: 600px; */
+}
+
 .list-grid .cell {
-  border-bottom: 1px solid #D86939;
+  border-top: 1px solid #D86939;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -5,21 +5,10 @@
   <label for="name">Category:</label>
     <input id="name" type="text" name="name" maxlength="255" value="<%= @category.name %>" required/>
 
-  <label for="colour">Colour:</label>
-    <select id="colour" name="colour" >
-      <% if @category.colour != "" %>
-        <option value="<%= @category.colour %>" selected hidden><%= @category.colour %></option>
-      <% else %>
-        <option value="" selected hidden>None</option>
-      <% end %>
-      <option value="">None</option>
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-      <option value="yellow">Yellow</option>
-      <option value="green">Green</option>
-      <option value="purple">Purple</option>
-      <option value="orange">Orange</option>
-    </select>
+  <div class="colour-picker-container">
+    <label for="colour" >Colour:</label>
+    <input id="colour" class="colour-picker" type="color" name="colour" value="#FFFFFF">
+  </div>
 
   <div class="form-submit">
     <input type="submit" value="Update Category"/>
