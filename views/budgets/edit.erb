@@ -3,7 +3,10 @@
 <form class="new-update" method="post" action="/budget/set/<%= @budget.id %>/<%= @budget.type %>">
 
   <label for="amount">Amount:</label>
-    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="amount" value="<%= @budget.amount %>" required/>
+    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="amount" value="<%= @budget.amount %>" required />
+
+  <label for="amount">Budget alert range:</label>
+    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="alert_range" value="<%= @budget.alert_range %>" />
 
   <div class="form-submit">
     <input type="submit" value="Set Budget"/>

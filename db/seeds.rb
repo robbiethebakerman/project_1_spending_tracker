@@ -64,8 +64,6 @@ transaction2.save
 
 
 
-
-
 binding.pry
 nil
 

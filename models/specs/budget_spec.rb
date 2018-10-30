@@ -8,7 +8,8 @@ class TestBudget < MiniTest::Test
     options = {
       'id' => 1,
       'type' => 'Total',
-      'amount' => 450.00
+      'amount' => 450.00,
+      'alert_range' => 50.00
     }
     @budget = Budget.new(options)
   end
@@ -23,6 +24,10 @@ class TestBudget < MiniTest::Test
 
   def test_budget_has_amount
     assert_equal(450.00, @budget.amount)
+  end
+
+  def test_budget_has_alert_range
+    assert_equal(50.00, @budget.alert_range)
   end
 
 end

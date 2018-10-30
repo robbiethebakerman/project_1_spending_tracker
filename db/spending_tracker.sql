@@ -26,7 +26,8 @@ CREATE TABLE transactions (
 CREATE TABLE budgets (
   id SERIAL4 PRIMARY KEY,
   type VARCHAR(255) NOT NULL,
-  amount NUMERIC(7,2)
+  amount NUMERIC(7,2),
+  alert_range NUMERIC(7,2)
 );
 
 INSERT INTO budgets (type) VALUES ('total');

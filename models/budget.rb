@@ -1,12 +1,13 @@
 class Budget
 
   attr_reader :id
-  attr_accessor :type, :amount
+  attr_accessor :type, :amount, :alert_range
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @type = options['type']
     @amount = options['amount'].to_f if options['amount']
+    @alert_range = options['alert_range'].to_f if options['alert_range']
   end
 
     def self.find(id)
@@ -29,11 +30,11 @@ class Budget
       return budget
     end
 
-    def update_amount()
+    def update_amount_and_alert()
       sql = "UPDATE budgets
-        SET amount = $1
-        WHERE id = $2;"
-      values = [@amount, @id]
+        SET (amount, alert_range) = ($1, $2)
+        WHERE id = $3;"
+      values = [@amount, @alert_range, @id]
       SqlRunner.run(sql, values)
     end
 
