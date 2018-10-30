@@ -118,6 +118,48 @@ class Transaction
     return transactions
   end
 
+  def self.all_formatted_filtered_category(category_id)
+    sql = "SELECT
+        id,
+        seller_id,
+        category_id,
+        amount,
+        description,
+        transaction_time,
+        TO_CHAR(
+          transaction_time,
+          'DD-Mon-YYYY HH24:MI'
+        ) transaction_time_formatted
+      FROM transactions
+      WHERE category_id = $1
+      ORDER BY transaction_time DESC;"
+    values = [category_id]
+    results = SqlRunner.run(sql, values)
+    transactions = results.map { |result| Transaction.new(result) }
+    return transactions
+  end
+
+  def self.all_formatted_filtered_seller(seller_id)
+    sql = "SELECT
+        id,
+        seller_id,
+        category_id,
+        amount,
+        description,
+        transaction_time,
+        TO_CHAR(
+          transaction_time,
+          'DD-Mon-YYYY HH24:MI'
+        ) transaction_time_formatted
+      FROM transactions
+      WHERE seller_id = $1
+      ORDER BY transaction_time DESC;"
+    values = [seller_id]
+    results = SqlRunner.run(sql, values)
+    transactions = results.map { |result| Transaction.new(result) }
+    return transactions
+  end
+
   def self.delete_all()
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)

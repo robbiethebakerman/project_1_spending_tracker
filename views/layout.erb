@@ -41,7 +41,7 @@
       <div class="budget-bar-row">
         <div class="cell-budget">
           <p>BUDGET: £<%= settings.budget_total_amount %></p>
-          <a href="/budget/set/total" class="button" >Change Budget Amount</a>
+          <a href="/budget/set/<%= settings.budget_total.type %>" class="button" >Change Budget Amount</a>
         </div>
         <div class="cell-total-spent">
           <p>TOTAL SPENT: £<%= settings.total_spent %></p>

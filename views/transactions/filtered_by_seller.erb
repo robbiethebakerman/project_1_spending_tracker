@@ -1,43 +1,10 @@
 <div class="index-top-row">
   <div class="index-cell-title">
-    <h1>Transactions</h1>
+    <h1>Transactions filtered by <%= @seller.name %></h1>
+    <p>Shows only transactions from the seller "<%= @seller.name %>"</p>
   </div>
   <div class="index-cell-add-button">
-    <a href="/transactions/new" class="button" ><span>+ </span>Add New Transaction</a>
-  </div>
-</div>
-
-<div class="transaction-filter-row">
-  <div class="cell">
-    <form class="transaction-filter" action="/transactions/filtered/category" method="post">
-      <label for="category">Filter by category:</label>
-      <select id="category_id" name="category_id">
-        <% for category in @categories %>
-          <option value="<%= category.id %>"><%= category.name %></option>
-        <% end %>
-      </select>
-      <input type="submit" value="Show Transactions"/>
-    </form>
-  </div>
-  <div class="cell">
-    <form class="transaction-filter" action="/transactions/filtered/seller" method="post">
-      <label for="seller">Filter by seller:</label>
-      <select id="seller_id" name="seller_id">
-        <% for seller in @sellers %>
-          <option value="<%= seller.id %>"><%= seller.name %></option>
-        <% end %>
-      </select>
-      <input type="submit" value="Show Transactions"/>
-    </form>
-  </div>
-  <div class="cell">
-
-  </div>
-  <div class="cell">
-
-  </div>
-  <div class="cell">
-
+    <a href="/transactions" class="button" >Show all transactions</a>
   </div>
 </div>
 

@@ -20,6 +20,14 @@ Highlight:
         erb(:index)
       end
 
+- Bug fix for budget and total_spent not displaying on other pages - global variables
+
+    set :budget_total, Budget.find_by_type('total')
+    set :budget_total_amount, '0.00'
+    set :budget_total_amount, '%.2f' % settings.budget_total.amount if settings.budget_total.amount != nil
+    set :total_spent, '0.00'
+    set :total_spent, '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
+
 ASK - Is it okay if some bits are only supported in chrome?
 
 STILL NEED TOTAL SPENT TO BE DISPLAYED
