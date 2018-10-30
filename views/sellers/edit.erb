@@ -1,12 +1,13 @@
-<p>Update Seller Details</p>
+<h2>Update Seller Details</h2>
 
 <form class="new-update" method="post" action="/sellers/update/<%= @seller.id %>">
 
   <label for="name">Name:</label>
     <input id="name" type="text" name="name" maxlength="255" value="<%= @seller.name %>" required />
 
-  <input type="submit" value="Update Seller Details"/>
-
-  <a href="/sellers">Cancel</a>
+  <div class="form-submit">
+    <input type="submit" value="Update Seller"/>
+    <a href="/sellers">Cancel</a>
+  </div>
 
 </form>

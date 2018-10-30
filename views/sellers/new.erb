@@ -1,12 +1,13 @@
-<p>Add New Seller</p>
+<h2>Add New Seller</h2>
 
 <form class="new-update" method="post" action="/sellers/create">
 
   <label for="name">Name:</label>
     <input id="name" type="text" name="name" maxlength="255" required />
 
-  <input type="submit" value="Add Seller"/>
-
-  <a href="/sellers">Cancel</a>
+  <div class="form-submit">
+    <input type="submit" value="Add Seller"/>
+    <a href="/sellers">Cancel</a>
+  </div>
 
 </form>

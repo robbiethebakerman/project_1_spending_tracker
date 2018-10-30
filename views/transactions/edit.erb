@@ -1,4 +1,4 @@
-<p>Update Transaction Details</p>
+<h2>Update Transaction Details</h2>
 
 <form class="new-update" method="post" action="/transactions/update/<%= @transaction.id %>">
 
@@ -27,8 +27,9 @@
   <label for="datetime">Transaction Date / Time:</label>
     <input id="datetime" type="datetime-local" name="transaction_time" value="<%= @transaction.transaction_time_formatted_html %>" required >
 
-  <input type="submit" value="Update Transaction Details"/>
-
-  <a href="/transactions">Cancel</a>
+  <div class="form-submit">
+    <input type="submit" value="Update Transaction Details"/>
+    <a href="/transactions">Cancel</a>
+  </div>
 
 </form>

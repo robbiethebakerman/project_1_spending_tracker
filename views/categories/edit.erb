@@ -1,4 +1,4 @@
-<p>Update Category Details</p>
+<h2>Update Category Details</h2>
 
 <form class="new-update" method="post" action="/categories/update/<%= @category.id %>">
 
@@ -21,8 +21,9 @@
       <option value="orange">Orange</option>
     </select>
 
-  <input type="submit" value="Update Category Details"/>
-
-  <a href="/categories">Cancel</a>
+  <div class="form-submit">
+    <input type="submit" value="Update Category"/>
+    <a href="/categories">Cancel</a>
+  </div>
 
 </form>
