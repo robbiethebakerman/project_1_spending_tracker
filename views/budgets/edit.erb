@@ -1,1 +1,13 @@
-BUDGETS!!
+<h2>Set Budget</h2>
+
+<form class="new-update" method="post" action="/budget/set/<%= @budget.id %>/<%= @budget.type %>">
+
+  <label for="amount">Amount:</label>
+    <input id="amount" type="number" step="0.01" min="0.00" placeholder="0.00" name="amount" value="<%= @budget.amount %>" required/>
+
+  <div class="form-submit">
+    <input type="submit" value="Set Budget"/>
+    <a href="/">Cancel</a>
+  </div>
+
+</form>
