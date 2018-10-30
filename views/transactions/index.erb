@@ -13,7 +13,7 @@
       <label for="category">Filter by category:</label>
       <select id="category_id" name="category_id">
         <% for category in @categories %>
-          <option value="<%= category.id %>"><%= category.name %></option>
+          <option value="<%= category.id %>" style="background-color: <%= category.colour %>;"><%= category.name %></option>
         <% end %>
       </select>
       <input type="submit" value="Show Transactions"/>
@@ -30,15 +30,6 @@
       <input type="submit" value="Show Transactions"/>
     </form>
   </div>
-  <div class="cell">
-
-  </div>
-  <div class="cell">
-
-  </div>
-  <div class="cell">
-
-  </div>
 </div>
 
 <div class="transaction-list-grid">
@@ -47,6 +38,8 @@
   </div>
   <div class="cell">
       <p>Category</p>
+  </div>
+  <div class="cell">
   </div>
   <div class="cell">
     <p>Seller</p>
@@ -70,6 +63,8 @@
       <p>
         <%= category.name if category.name != 'None' %>
       </p>
+    </div>
+    <div class="cell" style="background-color: <%= category.colour %>;">
     </div>
     <div class="cell">
       <p>

@@ -9,7 +9,10 @@
 
 <div class="list-grid">
   <% for category in @categories %>
-    <div class="cell">
+    <div class="cell" style="background-color: <%= category.colour %>;" >
+
+    </div>
+    <div class="cell" >
       <p><%= category.name %></p>
     </div>
     <div class="cell">

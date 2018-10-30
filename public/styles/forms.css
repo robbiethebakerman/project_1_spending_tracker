@@ -17,6 +17,19 @@
   color: #D86939;
 }
 
+.colour-picker-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#colour {
+  height: 40px !important;
+  width: 30%;
+  margin-left: 10px;
+}
+
 select {
   width: 100%;
   background-color: none;

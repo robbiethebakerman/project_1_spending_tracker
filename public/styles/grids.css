@@ -2,7 +2,7 @@
 
 .transaction-list-grid {
   display: grid;
-  grid-template-columns: 90px 100px repeat(5, 1fr);
+  grid-template-columns: 90px 100px 100px repeat(5, 1fr);
 }
 
 .transaction-list-grid .cell {
@@ -33,7 +33,7 @@
 
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 100px repeat(3, 1fr);
 }
 
 .list-grid .cell {
