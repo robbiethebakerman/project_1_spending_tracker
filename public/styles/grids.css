@@ -1,0 +1,60 @@
+/* transactions grid */
+
+.transaction-list-grid {
+  display: grid;
+  grid-template-columns: 90px 100px repeat(5, 1fr);
+}
+
+.transaction-list-grid .cell {
+  border-bottom: 1px solid #D86939;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.transaction-list-grid a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  display: block;
+  text-align: center;
+  margin: 5px;
+  /* height: 36px; */
+}
+
+.transaction-list-grid a:active {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px 3px;
+}
+
+/* categories and sellers grid */
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.list-grid .cell {
+  border-bottom: 1px solid #D86939;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.list-grid a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  display: block;
+  text-align: center;
+  margin: 5px;
+}
+
+.list-grid a:active {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px 3px;
+}

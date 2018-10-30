@@ -158,15 +158,3 @@ nav li a:hover {
 .index-cell-add-button a span {
   font-size: 24px;
 }
-
-/* transactions grid */
-
-.transaction-list-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-}
-
-.transaction-list-grid .cell {
-
-}

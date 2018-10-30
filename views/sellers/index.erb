@@ -7,18 +7,16 @@
   </div>
 </div>
 
-<div class="grid">
+<div class="list-grid">
   <% for seller in @sellers %>
-  <div class="grid-row">
     <div class="cell">
       <p><%= seller.name %></p>
     </div>
     <div class="cell">
-      <a href="/sellers/edit/<%= seller.id %>">Update Seller Details</a>
+      <a href="/sellers/edit/<%= seller.id %>" class="button" >Update Seller Details</a>
     </div>
     <div class="cell">
-      <a href="/sellers/delete/<%= seller.id %>">Remove Seller</a>
+      <a href="/sellers/delete/<%= seller.id %>" class="button" >Remove Seller</a>
     </div>
-  </div>
   <% end %>
 </div>

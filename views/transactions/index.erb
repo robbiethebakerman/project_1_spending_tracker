@@ -8,6 +8,24 @@
 </div>
 
 <div class="transaction-list-grid">
+  <div class="cell">
+    <p>Amount (£)</p>
+  </div>
+  <div class="cell">
+      <p>Category</p>
+  </div>
+  <div class="cell">
+    <p>Seller</p>
+  </div>
+  <div class="cell">
+    <p>Date/Time</p>
+  </div>
+  <div class="cell">
+  </div>
+  <div class="cell">
+  </div>
+  <div class="cell">
+  </div>
   <% for transaction in @transactions %>
   <% category = transaction.find_category %>
   <% seller = transaction.find_seller if transaction.seller_id != nil %>
@@ -28,13 +46,13 @@
       <p><%= transaction.transaction_time_formatted %></p>
     </div>
     <div class="cell">
-      <a href="/transactions/detail/<%= transaction.id %>">View Transaction</a>
+      <a href="/transactions/detail/<%= transaction.id %>" class="button" >View Transaction</a>
     </div>
     <div class="cell">
-      <a href="/transactions/edit/<%= transaction.id %>">Update Transaction Details</a>
+      <a href="/transactions/edit/<%= transaction.id %>" class="button" >Update Transaction Details</a>
     </div>
     <div class="cell">
-      <a href="/transactions/delete/<%= transaction.id %>">Remove Transaction</a>
+      <a href="/transactions/delete/<%= transaction.id %>" class="button" >Remove Transaction</a>
     </div>
   <% end %>
 </div>
