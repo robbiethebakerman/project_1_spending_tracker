@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/category')
 require_relative('../models/seller')
 require_relative('../models/transaction')
+require_relative('../models/budget')
 
 get "/transactions" do
   @transactions = Transaction.all_formatted()
@@ -52,20 +53,26 @@ get "/transactions/filtered/seller/:seller_id" do
 end
 
 post "/transactions/create" do
-  @transaction = Transaction.new(params)
-  @transaction.save()
+  transaction = Transaction.new(params)
+  transaction.save()
+  $total_spent = '0.00'
+  $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
   redirect to "/transactions"
 end
 
 post "/transactions/update/:id" do
   transaction = Transaction.new(params)
-  transaction.update
+  transaction.update()
+  $total_spent = '0.00'
+  $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
   redirect to "/transactions"
 end
 
 post "/transactions/delete/:id" do
   transaction = Transaction.find(params[:id])
   transaction.delete()
+  $total_spent = '0.00'
+  $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
   redirect to "/transactions"
 end
 

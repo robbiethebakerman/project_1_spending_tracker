@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/category')
 require_relative('../models/seller')
 require_relative('../models/transaction')
+require_relative('../models/budget')
 
 get "/sellers" do
   @sellers = Seller.all_except_none()
