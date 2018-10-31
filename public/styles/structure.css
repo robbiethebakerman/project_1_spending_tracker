@@ -94,6 +94,7 @@ nav li a:hover {
   display: flex;
   align-items: center;
   font-weight: bold;
+  padding-left: 8px;
 }
 
 .cell-budget a {
