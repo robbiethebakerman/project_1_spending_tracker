@@ -37,13 +37,16 @@
         </li>
       </ul>
     </nav>
-    <section class="budget-bar">
-      <div class="budget-bar-row">
-        <div class="cell-budget">
+    <section class="budget-bar" >
+      <div class="budget-bar-row" style="background-color: <%= $alert_colour %>;">
+        <div class="cell-budget" id="cell-budget">
           <p>BUDGET: £<%= $budget_total_amount %></p>
           <a href="/budget/set/<%= $budget_total.type %>" class="button" >Change Budget Amount</a>
         </div>
-        <div class="cell-total-spent" style="background-color: <%= $alert_colour %>;">
+        <div class="cell-budget-message">
+          <%= $alert_message %>
+        </div>
+        <div class="cell-total-spent" >
           <p>TOTAL SPENT: £<%= $total_spent %></p>
         </div>
       </div>

@@ -74,22 +74,31 @@ nav li a:hover {
   justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid #D86939;
+  color: #2F4858;
 }
 
 .cell-total-spent {
   padding-right: 8px;
+  font-weight: bold;
 }
 
 .cell-budget {
   padding-left: 8px;
   display: flex;
   align-items: center;
+  font-weight: bold;
+}
+
+.cell-budget-message {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 .cell-budget a {
-  color: #D86939;
-  background-color: #EFEDFF;
-  border-color: #D86939;
+  color: #2F4858;
+  background-color: #BDBCE1;
+  border-color: #2F4858;
   margin-left: 10px;
   font-size: 14px;
 }

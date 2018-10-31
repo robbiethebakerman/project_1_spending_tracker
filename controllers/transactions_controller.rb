@@ -57,12 +57,22 @@ post "/transactions/create" do
   transaction.save()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
-  $alert_colour = 'green'
-  $alert_colour = 'red' if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+  $alert_colour = '#8ED580'
+  $alert_message = 'You are safely within budget!'
+  if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+    $alert_colour = '#FA7672'
+    $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+  end
   if ($budget_total.amount != nil && $budget_total.alert_range != nil)
     budget_alert = $budget_total.amount - $budget_total.alert_range
-    $alert_colour = 'orange' if budget_alert < Transaction.total_spent
-    $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
+    if budget_alert < Transaction.total_spent
+      $alert_colour = '#F9BB6D'
+      $alert_message = 'Careful!! You are nearly reaching your budget!!'
+    end
+    if $budget_total.amount < Transaction.total_spent
+      $alert_colour = '#FA7672'
+      $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+    end
   end
   redirect to "/transactions"
 end
@@ -72,12 +82,22 @@ post "/transactions/update/:id" do
   transaction.update()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
-  $alert_colour = 'green'
-  $alert_colour = 'red' if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+  $alert_colour = '#8ED580'
+  $alert_message = 'You are safely within budget!'
+  if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+    $alert_colour = '#FA7672'
+    $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+  end
   if ($budget_total.amount != nil && $budget_total.alert_range != nil)
     budget_alert = $budget_total.amount - $budget_total.alert_range
-    $alert_colour = 'orange' if budget_alert < Transaction.total_spent
-    $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
+    if budget_alert < Transaction.total_spent
+      $alert_colour = '#F9BB6D'
+      $alert_message = 'Careful!! You are nearly reaching your budget!!'
+    end
+    if $budget_total.amount < Transaction.total_spent
+      $alert_colour = '#FA7672'
+      $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+    end
   end
   redirect to "/transactions"
 end
@@ -87,12 +107,22 @@ post "/transactions/delete/:id" do
   transaction.delete()
   $total_spent = '0.00'
   $total_spent = '%.2f' % Transaction.total_spent if Transaction.total_spent != nil
-  $alert_colour = 'green'
-  $alert_colour = 'red' if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+  $alert_colour = '#8ED580'
+  $alert_message = 'You are safely within budget!'
+  if $budget_total.amount != nil && $budget_total.amount < Transaction.total_spent
+    $alert_colour = '#FA7672'
+    $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+  end
   if ($budget_total.amount != nil && $budget_total.alert_range != nil)
     budget_alert = $budget_total.amount - $budget_total.alert_range
-    $alert_colour = 'orange' if budget_alert < Transaction.total_spent
-    $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
+    if budget_alert < Transaction.total_spent
+      $alert_colour = '#F9BB6D'
+      $alert_message = 'Careful!! You are nearly reaching your budget!!'
+    end
+    if $budget_total.amount < Transaction.total_spent
+      $alert_colour = '#FA7672'
+      $alert_message = '!!! YOU ARE OVER YOUR BUDGET !!!'
+    end
   end
   redirect to "/transactions"
 end
