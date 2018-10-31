@@ -1,17 +1,26 @@
-<h1>Sorry!</h1>
+<p class="delete-failed-message">
+  <strong>
+    Sorry!
+  </strong>
+  <br>
+  <br>
+  This seller cannot be removed because it is already used as the seller for some of your transactions.
+  <br>
+  <br>
+  You could try doing one of the following things instead:
+</p>
 
-<p>This seller cannot be removed because it is already used as the seller for some of your transactions.<br><br>You could try doing one of the following things instead:</p>
- <ul>
-   <li>
-     <p>Updating the seller details</p>
-     <a href="/sellers/edit/<%= @seller.id %>">Update Seller Details</a>
-   </li>
-   <li>
-     <p>Updating the transactions themselves, or deleting them</p>
-     <a href="/transactions/filtered/seller/<%= @seller.id %>">View transactions using this seller</a>
-   </li>
-   <li>
-     <p>Or... Just return to the sellers page</p>
-     <a href="/sellers">Return to Sellers</a>
-   </li>
- </ul>
+<ul class="delete-failed-options">
+ <li>
+   <p>Updating the seller details</p>
+   <a href="/sellers/edit/<%= @seller.id %>" class="button">Update Seller Details</a>
+ </li>
+ <li>
+   <p>Updating the transactions themselves, or deleting them</p>
+   <a href="/transactions/filtered/seller/<%= @seller.id %>" class="button">View transactions using this seller</a>
+ </li>
+ <li>
+   <p>Or... Just return to the sellers page</p>
+   <a href="/sellers" class="button">Return to Sellers</a>
+ </li>
+</ul>

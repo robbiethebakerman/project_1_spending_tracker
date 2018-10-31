@@ -2,6 +2,7 @@
 
 body {
   color: #D86939;
+  /* font-family: Verdana; */
 }
 
 /* header  */
@@ -167,3 +168,134 @@ nav li a:hover {
 .index-cell-add-button a span {
   font-size: 24px;
 }
+
+.filtered-top-row {
+  border-bottom: 1px dotted #D86939;
+}
+
+/* transaction filters row */
+
+.transaction-filter-row {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted #D86939;
+}
+
+.transaction-filter-row .cell {
+  flex-grow: 0.8;
+  margin-right: 5px;
+}
+
+.transaction-filter {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-filter input {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  display: block;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.transaction-filter select {
+  width: 40%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  align-self: flex-end;
+}
+
+/* delete confirmation */
+
+.delete-confirmation-message {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+}
+
+.delete-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-options input {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  text-align: center;
+  font-size: 16px;
+  height: 100%;
+}
+
+.delete-options a {
+  display: inline-block;
+  width: 30%;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  border: 1px solid #435176;
+  border-radius: 5px;
+  background-color: #e06c70;
+  color: white;
+  box-sizing: border-box;
+}
+
+.delete-options a:hover {
+  background-color: #db575b;
+}
+
+.delete-options a:active {
+  background-color: #db575b;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 4px 3px;
+}
+
+/* delete failed */
+
+.delete-failed-message {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+  border-bottom: 1px dotted #D86939;
+  padding-bottom: 25px;
+}
+
+.delete-failed-options {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.delete-failed-options li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.delete-failed-options a{
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  text-align: center;
+  font-size: 16px;
+  height: 100%;
+  margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+/*  */

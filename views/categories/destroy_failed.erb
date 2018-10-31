@@ -1,17 +1,26 @@
-<h1>Sorry!</h1>
+<p class="delete-failed-message">
+  <strong>
+    Sorry!
+  </strong>
+  <br>
+  <br>
+  This seller cannot be removed because it is already used as the seller for some of your transactions.
+  <br>
+  <br>
+  You could try doing one of the following things instead:
+</p>
 
-<p>This category cannot be removed because it is already used as the category for some of your transactions.<br><br>You could try doing one of the following things instead:</p>
- <ul>
-   <li>
-     <p>Updating the category details</p>
-     <a href="/categories/edit/<%= @category.id %>">Update Category Details</a>
-   </li>
-   <li>
-     <p>Updating the transactions themselves, or deleting them</p>
-     <a href="/transactions/filtered/category/<%= @category.id %>">View transactions using this category</a>
-   </li>
-   <li>
-     <p>Or... Just return to the categories page</p>
-     <a href="/categories">Return to Categories</a>
-   </li>
- </ul>
+<ul class="delete-failed-options">
+  <li>
+    <p>Updating the category details</p>
+    <a href="/categories/edit/<%= @category.id %>" class="button">Update Category Details</a>
+  </li>
+  <li>
+    <p>Updating the transactions themselves, or deleting them</p>
+    <a href="/transactions/filtered/category/<%= @category.id %>" class="button">View transactions using this category</a>
+  </li>
+  <li>
+    <p>Or... Just return to the categories page</p>
+    <a href="/categories" class="button">Return to Categories</a>
+  </li>
+</ul>
