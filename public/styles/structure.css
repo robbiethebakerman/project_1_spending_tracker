@@ -291,9 +291,60 @@ nav li a:hover {
   margin-left: 15px;
 }
 
+/* transaction detailed view */
 
+.detailed-top-row {
+  display: flex;
+}
 
+.detailed-cell-contents {
+  padding-right: 8px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, sans-serif;
+}
 
+.detailed-category {
+  display: flex;
+  align-items: center;
+}
+
+.detailed-category-cell {
+  width: 80px;
+  margin-left: 20px;
+  height: 30px;
+}
+
+.detailed-cell-view-all {
+  padding-left: 8px;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.detailed-cell-view-all a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  padding-top: 1px;
+  margin-top: 3px;
+}
+
+.detailed-bottom-row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.detailed-bottom-row a {
+  color: #D86939;
+  background-color: #EFEDFF;
+  border-color: #D86939;
+  margin-left: 15px;
+}
 
 
 

@@ -38,6 +38,6 @@ Highlight:
     $alert_colour = 'green'
     $alert_colour = 'red' if $budget_total.amount < Transaction.total_spent
 
-ASK - Is it okay if some bits are only supported in chrome?
+#########
 
-STILL NEED TOTAL SPENT TO BE DISPLAYED
+- Further extensions I would add

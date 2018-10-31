@@ -1,37 +1,30 @@
-<div class="index-top-row">
-  <div class="index-cell-title">
+<div class="detailed-top-row">
+  <div class="detailed-cell-contents">
     <h1>Detailed Transaction View</h1>
+    <p>£<%= '%.2f' % @transaction.amount %></p>
+    <% if @transaction.description != '' %>
+      <p><%= @transaction.description %></p>
+    <% end %>
+    <% if @category.name != 'None' %>
+      <div class="detailed-category">
+        <div>
+          <p><%= @category.name %></p>
+        </div>
+        <div class="detailed-category-cell" style="background-color: <%= @category.colour %>;">
+        </div>
+      </div>
+    <% end %>
+    <% if @seller.name != 'None' %>
+      <p><%= @seller.name%></p>
+    <% end %>
+    <p><%= @transaction.transaction_time_formatted %></p>
+    <div class="detailed-bottom-row">
+      <a href="/transactions/edit/<%= @transaction.id %>" class="button" >Update Transaction Details</a>
+      <a href="/transactions/delete/<%= @transaction.id %>" class="button" >Remove Transaction</a>
+      <a href="/transactions/new" class="button" >Add New Transaction</a>
+    </div>
   </div>
-  <div class="index-cell-add-button">
+  <div class="detailed-cell-view-all">
     <a href="/transactions" class="button">View all transactions</a>
   </div>
 </div>
-
-
-<p>
-  £<%= '%.2f' % @transaction.amount %>
-</p>
-
-<p>
-  <%= @transaction.description %>
-</p>
-
-<p>
-  <%= @category.name if @category.name != 'None' %>
-</p>
-
-<p>
-  <%= @seller.name if @seller.name != 'None' %>
-</p>
-
-<p>
-  <%= @transaction.transaction_time_formatted %>
-</p>
-
-<a href="/transactions/edit/<%= @transaction.id %>">Update Transaction Details</a>
-
-<a href="/transactions/delete/<%= @transaction.id %>">Remove Transaction</a>
-
-<br><br>
-
-<a href="/transactions/new">Add New Transaction</a>
